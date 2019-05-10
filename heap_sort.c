@@ -21,8 +21,10 @@ void heap_sort(int* list, int size)
 {
   int i;
 
-  for(i = size/2;i >= 1;i--)
+  for(i = size/2;i >= 1;i--){
 	pushdown(list, i, size);
+  }
+
   for(i = size;i >= 2;i--){
 	swap(&list[1], &list[i]);
 	pushdown(list, 1, i-1);
@@ -44,6 +46,7 @@ void pushdown(int *list, int first, int last)
 	child = 2 * parent;
   }
 }
+
 void swap(int *x, int *y)
 {
   int temp = *x;
